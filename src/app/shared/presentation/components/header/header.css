@@ -64,10 +64,7 @@ header {
   padding: 12px 32px;
 }
 
-@media (max-width: 480px) {
-  .logo-text {
-    display: none;
-  }
+@media (max-width: 650px) {
   .btn-container {
     display: none;
   }
