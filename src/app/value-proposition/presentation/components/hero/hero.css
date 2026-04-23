@@ -98,7 +98,7 @@
     min-height: 40vh;
   }
   .hero {
-    background-position: calc(100vw + 150px);
+    background-position: calc(100vw);
   }
 }
 
