@@ -1,10 +1,12 @@
 import { Component, signal } from '@angular/core';
 import {Header} from './shared/presentation/components/header/header';
+import {Hero} from './value-proposition/presentation/components/hero/hero';
 
 @Component({
   selector: 'app-root',
   imports: [
-    Header
+    Header,
+    Hero
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
