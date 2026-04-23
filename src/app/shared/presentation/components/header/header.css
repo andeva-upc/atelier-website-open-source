@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  padding: 1rem 5%;
+  background: #fff;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.logo-icon {
+  width: 56px;
+  height: 52px;
+  transform: translateY(15px);
+}
+
+.logo-container .logo-text {
+  font-family: "Zizou Slab Medium";
+  color: #0071eb;
+  font-size: 48px;
+}
+
+.btn-container {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  font-size: 20px;
+  font-family: "Mona Sans";
+  font-weight: 300;
+  padding: 12px 28px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #0071eb;
+  border: 1px solid #0071eb;
+}
+
+.btn-outline:hover {
+  background-color: #b3d4f8;
+}
+
+.btn-solid {
+  background-color: #0071eb;
+  color: #fff;
+  border: 1px solid #0071eb;
+  padding: 12px 32px;
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
+  .btn-container {
+    display: none;
+  }
+}
