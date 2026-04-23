@@ -168,26 +168,6 @@
   }
 }
 
-@media (max-width: 850px) {
-  .hero-title {
-    font-size: 52px;
-  }
-  .hero-subtitle {
-    font-size: 16px;
-  }
-  .btn {
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 14px;
-  }
-  .hero {
-    min-height: 40vh;
-  }
-  .hero {
-    background-position: calc(100vw + 150px);
-  }
-}
-
 @media (max-width: 500px) {
   .hero-title {
     font-size: 40px;
