@@ -1,13 +1,15 @@
 import { Component, signal } from '@angular/core';
 import {Header} from './shared/presentation/components/header/header';
 import {Hero} from './value-proposition/presentation/components/hero/hero';
+import {Card} from "./benefits/presentation/components/card/card";
 
 @Component({
   selector: 'app-root',
-  imports: [
-    Header,
-    Hero
-  ],
+    imports: [
+        Header,
+        Hero,
+        Card
+    ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
