@@ -3,6 +3,7 @@ import {Header} from './shared/presentation/components/header/header';
 import {Hero} from './value-proposition/presentation/components/hero/hero';
 import { Card } from "./benefits/presentation/components/card/card";
 import { Pricing } from "./pricing/presentation/components/pricing/pricing";
+import { Team } from "./team/presentation/components/team/team";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { Pricing } from "./pricing/presentation/components/pricing/pricing";
         Header,
         Hero,
         Card,
-        Pricing
+        Pricing,
+        Team
     ],
   templateUrl: './app.html',
   styleUrl: './app.css'
