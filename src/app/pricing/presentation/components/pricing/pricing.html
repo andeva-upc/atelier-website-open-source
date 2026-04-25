@@ -4,7 +4,7 @@
     <div class="pricing-header">
       <span class="pricing-badge">Precios</span>
       <p class="pricing-description">
-        Ofrecemos diferentes modelos de subscripción que se adaptan a ti y escalan contigo con beneficios únicos para crecer tu taller.
+        Ofrecemos diferentes modelos de subscripción que se adaptan a ti y escalan contigo con beneficios <br> únicos para crecer tu taller.
       </p>
     </div>
 
@@ -21,14 +21,78 @@
           class="toggle-btn" 
           [class.active]="isAnnual()" 
           (click)="togglePricing()">
-          Anual <span class="discount-badge">- Ahorra 17%</span>
+          Anual <span class="separator">·</span> <span class="discount-badge">Ahorra 17%</span>
         </button>
       </div>
     </div>
 
-    <!-- Grid Placeholder -->
+    <!-- Grid -->
     <div class="pricing-grid">
-       <!-- Content for Phase 3 -->
+      <!-- Card Lite -->
+      <article class="pricing-card">
+        <div class="card-top">
+          <h3 class="plan-name">Lite</h3>
+          <p class="plan-tagline">Conoce y explora el uso <br> de atelier</p>
+          <div class="price-container">
+            <span class="currency">S/.</span>
+            <span class="amount">{{ isAnnual() ? '82' : '99' }}</span>
+            <span class="period">/mes</span>
+          </div>
+        </div>
+        <div class="card-features-wrapper">
+          <ul class="feature-list">
+            <li><span class="check-icon">✓</span> Gestión básica ERP</li>
+            <li><span class="check-icon">✓</span> Inventario</li>
+            <li><span class="check-icon">✓</span> Conexión de hasta 5 vehículos</li>
+            <li><span class="check-icon">✓</span> Próximas funciones</li>
+          </ul>
+          <button class="plan-btn outline">Seleccionar Lite</button>
+        </div>
+      </article>
+
+      <!-- Card Pro (Featured) -->
+      <article class="pricing-card featured">
+        <div class="card-top">
+          <h3 class="plan-name">Pro</h3>
+          <p class="plan-tagline">Experimenta el poder de <br> infinitas posibilidades</p>
+          <div class="price-container">
+            <span class="currency">S/.</span>
+            <span class="amount">{{ isAnnual() ? '206' : '249' }}</span>
+            <span class="period">/mes</span>
+          </div>
+        </div>
+        <div class="card-features-wrapper">
+          <ul class="feature-list">
+            <li><span class="check-icon">✓</span> Todas las funciones del Plan Lite</li>
+            <li><span class="check-icon">✓</span> Gestión avanzada ERP</li>
+            <li><span class="check-icon">✓</span> Módulo de facturación electrónica</li>
+            <li><span class="check-icon">✓</span> Conexión de hasta 20 vehículos</li>
+          </ul>
+          <button class="plan-btn solid">Seleccionar Pro</button>
+        </div>
+      </article>
+
+      <!-- Card Max -->
+      <article class="pricing-card">
+        <div class="card-top">
+          <h3 class="plan-name">Max</h3>
+          <p class="plan-tagline">Desbloquea el máximo <br> rendimiento de atelier</p>
+          <div class="price-container">
+            <span class="currency">S/.</span>
+            <span class="amount">{{ isAnnual() ? '414' : '499' }}</span>
+            <span class="period">/mes</span>
+          </div>
+        </div>
+        <div class="card-features-wrapper">
+          <ul class="feature-list">
+            <li><span class="check-icon">✓</span> Todas las funciones del Plan Pro</li>
+            <li><span class="check-icon">✓</span> Reportes de rentabilidad</li>
+            <li><span class="check-icon">✓</span> Conexión de hasta 50 vehículos</li>
+            <li><span class="check-icon">✓</span> Automatizaciones</li>
+          </ul>
+          <button class="plan-btn outline">Seleccionar Max</button>
+        </div>
+      </article>
     </div>
   </div>
 </section>
