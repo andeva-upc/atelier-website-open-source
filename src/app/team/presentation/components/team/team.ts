@@ -21,31 +21,31 @@ export class Team {
       name: 'Joel Huamani Estefanero',
       role: 'Team Leader',
       description: 'Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializado en liderar y controlar el flujo del proyecto.',
-      imageUrl: '/joel.png'
+      imageUrl: '/assets/images/joel.png'
     },
     {
       name: 'Adiel Abdiaz Sanchez Santin',
       role: 'Team Member',
       description: 'Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializado en Front-End.',
-      imageUrl: '/adiel.png'
+      imageUrl: '/assets/images/adiel.png'
     },
     {
       name: 'Aldo Jeanfranco Machacca Soto',
       role: 'Team Member',
       description: 'Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializado en Web Services.',
-      imageUrl: '/aldo.png'
+      imageUrl: '/assets/images/aldo.png'
     },
     {
       name: 'Luis Daniel Granda Ibarra',
       role: 'Team Member',
       description: 'Estudiante de la Universidad Peruana de Ciencias Aplicadas cursando la carrera de Ingeniería de Software. Especializado en los datos y visualización del proyecto.',
-      imageUrl: '/daniel.png'
+      imageUrl: '/assets/images/daniel.png'
     },
     {
       name: 'Mariana Morocho Pinedo',
       role: 'Team Member',
       description: 'Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializada en datos.',
-      imageUrl: '/mariana.png'
+      imageUrl: '/assets/images/mariana.png'
     }
   ];
 }
