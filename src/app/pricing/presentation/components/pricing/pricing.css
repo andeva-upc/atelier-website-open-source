@@ -46,3 +46,52 @@
     gap: 16px;
   }
 }
+
+/* Toggle Styles */
+.pricing-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.pricing-toggle {
+  background: #FFFFFF;
+  border: 1px solid #BDBDBD;
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  gap: 4px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.toggle-btn {
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #212121;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-btn.active {
+  background: #0071EB;
+  color: #FFFFFF;
+}
+
+.discount-badge {
+  font-size: 14px;
+  color: #0071EB;
+  transition: color 0.3s ease;
+}
+
+.toggle-btn.active .discount-badge {
+  color: #B3D4F8;
+}
+

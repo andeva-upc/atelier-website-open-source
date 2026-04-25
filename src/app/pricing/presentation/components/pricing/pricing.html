@@ -8,9 +8,22 @@
       </p>
     </div>
 
-    <!-- Toggle Placeholder -->
+    <!-- Toggle -->
     <div class="pricing-toggle-wrapper">
-       <!-- Content for Phase 2 -->
+      <div class="pricing-toggle">
+        <button 
+          class="toggle-btn" 
+          [class.active]="!isAnnual()" 
+          (click)="togglePricing()">
+          Mensual
+        </button>
+        <button 
+          class="toggle-btn" 
+          [class.active]="isAnnual()" 
+          (click)="togglePricing()">
+          Anual <span class="discount-badge">- Ahorra 17%</span>
+        </button>
+      </div>
     </div>
 
     <!-- Grid Placeholder -->
