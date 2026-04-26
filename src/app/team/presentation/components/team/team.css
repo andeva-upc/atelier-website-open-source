@@ -1,0 +1,136 @@
+.team-section {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.team-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header */
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.team-badge {
+    background: #0074FF;
+    color: #ffffff;
+    font-family: 'Mona Sans', 'Inter', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    padding: 8px 24px;
+    border-radius: 8px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.team-subtitle {
+    font-family: 'Arimo', Arial, sans-serif;
+    font-size: 18px;
+    color: #757575;
+    margin: 0;
+}
+
+/* Grid */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Cards */
+.team-card {
+    flex: 0 1 calc(33.333% - 14px);
+    /* 3 cards per row, account for gap */
+    border: 1.5px solid #212121;
+    border-radius: 12px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    min-width: 280px;
+    /* Box shadow matching neo-brutalism design from the provided image */
+    box-shadow: 4px 4px #212121;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 6px 8px #212121;
+}
+
+.card-header {
+    margin-bottom: 12px;
+}
+
+.member-name {
+    font-family: 'Mona Sans', 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #212121;
+}
+
+.member-role {
+    font-family: 'Arimo', Arial, sans-serif;
+    font-size: 14px;
+    color: #9e9e9e;
+    display: block;
+}
+
+.member-image-container {
+    width: 100%;
+    height: 200px;
+    background-color: transparent;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.card-footer {
+    flex-grow: 1;
+}
+
+.member-description {
+    font-family: 'Arimo', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #757575;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .team-card {
+        flex: 0 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 640px) {
+    .team-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .team-card {
+        flex: 1 1 100%;
+    }
+}

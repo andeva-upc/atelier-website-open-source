@@ -1,0 +1,183 @@
+.services {
+    padding-top: 40px;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/*Header*/
+.services-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 52px;
+}
+
+/* "Servicios" blue pill badge */
+.services-badge {
+    display: inline-block;
+    background: #0074FF;
+    color: #ffffff;
+    font-family: 'Mona Sans', 'Inter', Arial, sans-serif;
+    font-size: 40px;
+    /* Exact design size */
+    font-weight: 500;
+    /* Medium */
+    padding: 8px 24px;
+    border-radius: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1.2;
+}
+
+.services-description {
+    font-family: 'Arimo', Arial, sans-serif;
+    font-size: 18px;
+    /* Exact design size */
+    line-height: 30px;
+    /* Exact line height */
+    color: #757575;
+    /* Exact design color */
+    margin: 0;
+    padding-top: 8px;
+    max-width: 600px;
+}
+
+/* Cursor blink effect for typing animation */
+.services-description.typing-active::after {
+    content: '|';
+    color: #757575;
+    animation: blinkCursor 0.8s step-end infinite;
+}
+
+@keyframes blinkCursor {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/*Grid*/
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/*Cards*/
+.svc-card {
+    border: 1.5px solid #212121;
+    border-radius: 20px;
+    padding: 40px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 220px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, opacity 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.svc-card.svc-card--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.svc-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 8px 10px 0px rgba(33, 33, 33, 0.15);
+    /* Subtle shadow on elevation */
+}
+
+/* background variants */
+.svc-card--light {
+    background: #B8D4FB;
+}
+
+/* light sky blue */
+.svc-card--blue {
+    background: #0074FF;
+}
+
+/* primary blue */
+.svc-card--dark {
+    background: #212121;
+}
+
+/* black/charcoal */
+
+/*Illustration image */
+.svc-img {
+    max-width: 180px;
+    max-height: 140px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+}
+
+.svc-card:hover .svc-img {
+    transform: scale(1.06) rotate(-2deg);
+}
+
+/*Labels*/
+.svc-label-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    /* No gap for continuous block effect */
+}
+
+.svc-label {
+    font-family: 'Mona Sans', 'Inter', Arial, sans-serif;
+    font-size: 30px;
+    /* Exact design size */
+    font-weight: 700;
+    line-height: 1.1;
+    white-space: nowrap;
+    /* Prevent text from wrapping due to lack of space */
+    border-radius: 6px;
+    padding: 4px 12px;
+}
+
+/* Blue filled label */
+.svc-label--blue {
+    background: #0074FF;
+}
+
+/* White filled label */
+.svc-label--white {
+    background: #ffffff;
+}
+
+/* Text colors */
+.text-white {
+    color: #ffffff;
+}
+
+.text-black {
+    color: #212121;
+}
+
+/*Responsive*/
+@media (max-width: 640px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
