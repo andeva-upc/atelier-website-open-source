@@ -4,7 +4,7 @@ import {Hero} from './value-proposition/presentation/components/hero/hero';
 import { Card } from "./benefits/presentation/components/card/card";
 import { Pricing } from "./pricing/presentation/components/pricing/pricing";
 import { Team } from "./team/presentation/components/team/team";
-import { Footer } from "./footer/presentation/components/footer/footer";
+import { Footer } from "./shared/presentation/components/footer/footer";
 
 @Component({
   selector: 'app-root',
