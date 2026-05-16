@@ -2,5 +2,116 @@
   "app": {
     "title": "Atelier",
     "description": "Landing page para Atelier."
+  },
+  "header": {
+    "login": "Acceder",
+    "join": "Unirse"
+  },
+  "hero": {
+    "title": "Transformar tu <br class=\"break\"><span class=\"hero-title-highlight\">Taller</span>",
+    "subtitle": "La única plataforma en Perú que integra diagnósticos con IA <br>y módulos de negocio para maximizar la rentabilidad de tu taller.",
+    "cta": "Únete al cambio"
+  },
+  "about": {
+    "title": "¿Qué es Atelier?",
+    "description": "Atelier es una plataforma (web y móvil) que digitaliza talleres automotrices independientes, integrando un sistema de gestión administrativa (ERP) con diagnóstico vehicular predictivo mediante hardware (OBD2). Su objetivo es automatizar procesos, anticipar fallas vehiculares y conectar directamente al mecánico con el conductor."
+  },
+  "services": {
+    "badge": "Servicios",
+    "description": "Ofrecemos una variedad de servicios y beneficios interesantes que pueden ayudarte a aumentar tu productividad en el trabajo y gestionar tu taller fácilmente. Estos servicios son:",
+    "analytics": {
+      "line1": "Analítica y",
+      "line2": "Facturación"
+    },
+    "orders": {
+      "line1": "Órdenes de",
+      "line2": "trabajo"
+    },
+    "loyalty": {
+      "line1": "Fidelización",
+      "line2": "de clientes"
+    },
+    "appointments": {
+      "line1": "Registro de citas",
+      "line2": "y clientes"
+    },
+    "inventory": {
+      "line1": "Control de",
+      "line2": "Inventario"
+    },
+    "staff": {
+      "line1": "Asignación de",
+      "line2": "personal"
+    }
+  },
+  "pricing": {
+    "badge": "Precios",
+    "description": "Ofrecemos diferentes modelos de subscripción que se adaptan a ti y escalan contigo con beneficios únicos para crecer tu taller.",
+    "monthly": "Mensual",
+    "annual": "Anual",
+    "save": "Ahorra 17%",
+    "select": "Seleccionar",
+    "period": "/mes",
+    "contact": "Contactar con un asesor",
+    "disclaimer": "Los precios mostrados no incluyen los impuestos aplicables. Los precios y los planes están sujetos a cambios a discreción de Andeva. Para planes Empresariales contactar con un asesor.",
+    "lite": {
+      "tagline": "Conoce y explora el uso <br> de atelier"
+    },
+    "pro": {
+      "tagline": "Experimenta el poder de <br> infinitas posibilidades"
+    },
+    "max": {
+      "tagline": "Desbloquea el máximo <br> rendimiento de atelier"
+    }
+  },
+  "team": {
+    "badge": "Nuestro Equipo",
+    "description": "Conozca al equipo que está detrás de atelier.",
+    "members": {
+      "joel": {
+        "role": "Líder de Equipo",
+        "description": "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializado en liderar y controlar el flujo del proyecto."
+      },
+      "adiel": {
+        "role": "Miembro del Equipo",
+        "description": "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializado en Front-End."
+      },
+      "aldo": {
+        "role": "Miembro del Equipo",
+        "description": "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializado en Web Services."
+      },
+      "jennifer": {
+        "role": "Miembro del Equipo",
+        "description": "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializada en datos."
+      },
+      "daniel": {
+        "role": "Miembro del Equipo",
+        "description": "Estudiante de la Universidad Peruana de Ciencias Aplicadas cursando la carrera de Ingeniería de Software. Especializado en los datos y visualización del proyecto."
+      },
+      "mariana": {
+        "role": "Miembro del Equipo",
+        "description": "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializada en datos."
+      }
+    },
+    "videos": {
+      "product": {
+        "title": "Video sobre el Producto",
+        "demo": "Demo del Video del Producto"
+      },
+      "team": {
+        "title": "Video sobre el Equipo",
+        "behind": "El Equipo detrás de Atelier"
+      }
+    }
+  },
+  "footer": {
+    "contact": "Contáctanos:",
+    "email": "Email",
+    "phone": "Número Telefónico",
+    "address": "Dirección",
+    "newsletter": "Suscríbete para noticias",
+    "privacy": "Políticas de Privacidad",
+    "terms": "Términos y Condiciones",
+    "rights": "All Rights Reserved."
   }
 }

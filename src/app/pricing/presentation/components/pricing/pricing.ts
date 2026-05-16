@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pricing',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './pricing.html',
   styleUrl: './pricing.css',
 })

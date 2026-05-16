@@ -3,103 +3,69 @@
 
         <!--Header -->
         <div class="services-header">
-            <span class="services-badge">Servicios</span>
-            <p class="services-description" id="typewriter-text">
-                Ofrecemos una variedad de servicios y beneficios interesantes que pueden ayudarte a aumentar tu
-                productividad en el trabajo y gestionar tu taller fácilmente. Estos servicios son:
+            <span class="services-badge">{{ 'services.badge' | translate }}</span>
+            <p class="services-description" [class.typing-active]="isTyping()">
+                {{ displayText() }}
             </p>
         </div>
 
         <!--Grid 2 × 3-->
         <div class="services-grid">
 
-            <!--ROW 1-->
-
-            <!-- Card 1: Analytics and Billing, light blue background -->
+            <!-- Card 1: Analytics and Billing -->
             <article class="svc-card svc-card--light" id="card-analitica">
                 <div class="svc-label-group">
-                    <span class="svc-label svc-label--blue text-white">Analítica y</span>
-                    <span class="svc-label svc-label--blue text-white">Facturación</span>
+                    <span class="svc-label svc-label--blue text-white">{{ 'services.analytics.line1' | translate }}</span>
+                    <span class="svc-label svc-label--blue text-white">{{ 'services.analytics.line2' | translate }}</span>
                 </div>
-                <img src="/assets/images/1.png" alt="Analítica y Facturación" class="svc-img" />
+                <img src="/assets/images/1.png" [alt]="'services.analytics.line1' | translate" class="svc-img" />
             </article>
 
-            <!-- Card 2: Work Orders, primary blue background -->
+            <!-- Card 2: Work Orders -->
             <article class="svc-card svc-card--blue" id="card-ordenes">
                 <div class="svc-label-group">
-                    <span class="svc-label svc-label--white text-black">Órdenes de</span>
-                    <span class="svc-label svc-label--white text-black">trabajo</span>
+                    <span class="svc-label svc-label--white text-black">{{ 'services.orders.line1' | translate }}</span>
+                    <span class="svc-label svc-label--white text-black">{{ 'services.orders.line2' | translate }}</span>
                 </div>
-                <img src="/assets/images/2.png" alt="Órdenes de trabajo" class="svc-img" />
+                <img src="/assets/images/2.png" [alt]="'services.orders.line1' | translate" class="svc-img" />
             </article>
 
-            <!--ROW 2-->
-
-            <!-- Card 3: Customer Loyalty, black background -->
+            <!-- Card 3: Customer Loyalty -->
             <article class="svc-card svc-card--dark" id="card-fidelizacion">
                 <div class="svc-label-group">
-                    <span class="svc-label svc-label--white text-black">Fidelización</span>
-                    <span class="svc-label svc-label--white text-black">de clientes</span>
+                    <span class="svc-label svc-label--white text-black">{{ 'services.loyalty.line1' | translate }}</span>
+                    <span class="svc-label svc-label--white text-black">{{ 'services.loyalty.line2' | translate }}</span>
                 </div>
-                <img src="/assets/images/3.png" alt="Fidelización de clientes" class="svc-img" />
+                <img src="/assets/images/3.png" [alt]="'services.loyalty.line1' | translate" class="svc-img" />
             </article>
 
-            <!-- Card 4: Appointments and Customers, light blue background -->
+            <!-- Card 4: Appointments and Customers -->
             <article class="svc-card svc-card--light" id="card-registro">
                 <div class="svc-label-group">
-                    <span class="svc-label svc-label--blue text-white">Registro de citas</span>
-                    <span class="svc-label svc-label--blue text-white">y clientes</span>
+                    <span class="svc-label svc-label--blue text-white">{{ 'services.appointments.line1' | translate }}</span>
+                    <span class="svc-label svc-label--blue text-white">{{ 'services.appointments.line2' | translate }}</span>
                 </div>
-                <img src="/assets/images/4.png" alt="Registro de citas y clientes" class="svc-img" />
+                <img src="/assets/images/4.png" [alt]="'services.appointments.line1' | translate" class="svc-img" />
             </article>
 
-            <!--ROW 3-->
-
-            <!-- Card 5: Inventory Control, primary blue background -->
+            <!-- Card 5: Inventory Control -->
             <article class="svc-card svc-card--blue" id="card-inventario">
                 <div class="svc-label-group">
-                    <span class="svc-label svc-label--white text-black">Control de</span>
-                    <span class="svc-label svc-label--white text-black">Inventario</span>
+                    <span class="svc-label svc-label--white text-black">{{ 'services.inventory.line1' | translate }}</span>
+                    <span class="svc-label svc-label--white text-black">{{ 'services.inventory.line2' | translate }}</span>
                 </div>
-                <img src="/assets/images/5.png" alt="Control de Inventario" class="svc-img" />
+                <img src="/assets/images/5.png" [alt]="'services.inventory.line1' | translate" class="svc-img" />
             </article>
 
-            <!-- Card 6: Staff Assignment, black background -->
+            <!-- Card 6: Staff Assignment -->
             <article class="svc-card svc-card--dark" id="card-personal">
                 <div class="svc-label-group">
-                    <span class="svc-label svc-label--blue text-white">Asignación de</span>
-                    <span class="svc-label svc-label--blue text-white">personal</span>
+                    <span class="svc-label svc-label--blue text-white">{{ 'services.staff.line1' | translate }}</span>
+                    <span class="svc-label svc-label--blue text-white">{{ 'services.staff.line2' | translate }}</span>
                 </div>
-                <img src="/assets/images/6.png" alt="Asignación de personal" class="svc-img" />
+                <img src="/assets/images/6.png" [alt]="'services.staff.line1' | translate" class="svc-img" />
             </article>
 
-        </div><!-- /services-grid -->
-    </div><!-- /services-container -->
+        </div>
+    </div>
 </section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const descElement = document.getElementById('typewriter-text');
-        if (descElement) {
-            // Remove extra spaces and newlines from HTML formatting
-            const fullText = "Ofrecemos una variedad de servicios y beneficios interesantes que pueden ayudarte a aumentar tu productividad en el trabajo y gestionar tu taller fácilmente. Estos servicios son:";
-            descElement.textContent = ''; // Clear initial text
-            descElement.classList.add('typing-active'); // Show cursor
-
-            let i = 0;
-            const typingSpeed = 35; // Milliseconds per letter
-
-            function typeWriter() {
-                if (i < fullText.length) {
-                    descElement.textContent += fullText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, typingSpeed);
-                } else {
-                    descElement.classList.remove('typing-active');
-                }
-            }
-
-            setTimeout(typeWriter, 400);
-        }
-    });
-</script>

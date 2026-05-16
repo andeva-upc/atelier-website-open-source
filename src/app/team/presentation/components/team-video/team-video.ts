@@ -1,34 +1,35 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-team-video',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   template: `
     <section class="videos-section">
         <div class="videos-container">
             <div class="video-item">
-                <h3 class="video-title">Video about the Product</h3>
+                <h3 class="video-title">{{ 'team.videos.product.title' | translate }}</h3>
                 <div class="video-placeholder product-bg">
                     <div class="play-button">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7z"/>
                         </svg>
                     </div>
-                    <span>Product Video Demo</span>
+                    <span>{{ 'team.videos.product.demo' | translate }}</span>
                 </div>
             </div>
 
             <div class="video-item">
-                <h3 class="video-title">Video about the Team</h3>
+                <h3 class="video-title">{{ 'team.videos.team.title' | translate }}</h3>
                 <div class="video-placeholder team-bg">
                     <div class="play-button">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7z"/>
                         </svg>
                     </div>
-                    <span>Team Behind Atelier</span>
+                    <span>{{ 'team.videos.team.behind' | translate }}</span>
                 </div>
             </div>
         </div>
