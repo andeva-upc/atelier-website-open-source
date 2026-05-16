@@ -36,6 +36,12 @@ export class Team {
       imageUrl: '/assets/images/aldo.png'
     },
     {
+      name: 'Jennifer Yamilet Riveros Vera',
+      role: 'Team Member',
+      description: 'Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. Especializada en datos.',
+      imageUrl: '/assets/images/jennifer.png'
+    },
+    {
       name: 'Luis Daniel Granda Ibarra',
       role: 'Team Member',
       description: 'Estudiante de la Universidad Peruana de Ciencias Aplicadas cursando la carrera de Ingeniería de Software. Especializado en los datos y visualización del proyecto.',

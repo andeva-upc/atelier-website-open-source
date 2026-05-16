@@ -6,14 +6,19 @@ import { Pricing } from "./pricing/presentation/components/pricing/pricing";
 import { Team } from "./team/presentation/components/team/team";
 import { Footer } from "./shared/presentation/components/footer/footer";
 
+import { About } from './value-proposition/presentation/components/about/about';
+import { TeamVideo } from './team/presentation/components/team-video/team-video';
+
 @Component({
   selector: 'app-root',
     imports: [
         Header,
         Hero,
+        About,
         Card,
         Pricing,
         Team,
+        TeamVideo,
         Footer
     ],
   templateUrl: './app.html',
