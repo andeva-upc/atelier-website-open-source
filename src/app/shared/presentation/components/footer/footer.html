@@ -22,16 +22,16 @@
 
   <div class="footer-middle">
     <div class="footer-contact">
-      <div class="contact-badge">Contáctanos:</div>
-      <p>Email: info@andeva.com</p>
-      <p>Número Telefónico: 999-999-999</p>
-      <p>Dirección: Av. Alameda<br>San Marcos, Chorrillos, Lima</p>
+      <div class="contact-badge">{{ 'footer.contact' | translate }}</div>
+      <p>{{ 'footer.email' | translate }}: info@andeva.com</p>
+      <p>{{ 'footer.phone' | translate }}: 999-999-999</p>
+      <p>{{ 'footer.address' | translate }}: Av. Alameda<br>San Marcos, Chorrillos, Lima</p>
     </div>
     
     <div class="footer-newsletter">
       <form class="newsletter-form">
         <input type="email" placeholder="Email" aria-label="Email" />
-        <button type="button">Suscríbete para noticias</button>
+        <button type="button">{{ 'footer.newsletter' | translate }}</button>
       </form>
     </div>
   </div>
@@ -39,10 +39,10 @@
   <hr class="footer-divider" />
 
   <div class="footer-bottom">
-    <p>© 2026 Andeva. All Rights Reserved.</p>
+    <p>© 2026 Andeva. {{ 'footer.rights' | translate }}</p>
     <div class="footer-links">
-      <a href="#">Políticas de Privacidad</a>
-      <a href="#">Términos y Condiciones</a>
+      <a href="#">{{ 'footer.privacy' | translate }}</a>
+      <a href="#">{{ 'footer.terms' | translate }}</a>
     </div>
   </div>
 </footer>
