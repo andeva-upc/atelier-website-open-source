@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: "Zizou Slab-Black";
+    src: url('/public/fonts/Zizou\ Slab-Black.otf');
+}
