@@ -1,0 +1,88 @@
+---
+import Menu2 from "../../public/images/menu-2.astro";
+import X from "../../public/images/x.astro"
+---
+
+<header class="z-50 w-full fixed bg-white">
+    <div class="border-b border-transparent">
+        <nav class="container flex h-16 md:h-20 w-full items-center justify-between px-5 sm:px-0">
+            <div class="flex items-center">
+                <a class="flex w-36 xl:w-44" href="#">
+                    <img alt="Atelier logo" loading="lazy" width="179" height="44" decoding="async" data-nimg="1" style="color:transparent" src="/public/images/logo-atelier.svg">
+                </a>
+            </div>
+            
+            <button id="menu-toggle" class="relative h-6 w-6 lg:hidden flex items-center justify-center text-black" type="button">
+                <span id="icon-menu" class="absolute transition-all duration-300 transform rotate-0 opacity-100 scale-100">
+                    <Menu2 />
+                </span>
+                <span id="icon-x" class="absolute transition-all duration-300 transform -rotate-90 opacity-0 scale-0">
+                    <X />
+                </span>
+            </button>
+            
+            <div id="mobile-menu" class="fixed left-0 right-0 z-[-1] w-full lg:hidden bg-[#fff] top-16 md:top-20 shadow-md transition-all duration-300 ease-in-out opacity-0 pointer-events-none -translate-y-4">
+                <nav class="container relative flex h-full flex-col justify-between divide-y divide-black divide-opacity-15">
+                    <div class="w-full px-5 pb-5 pt-4">
+                        <div class="flex w-full flex-col justify-between">
+                                    <a class="rounded-md text-white text-center transition-all ease-in-out hover:-translate-y-0 min-w-[250px] px-10 py-3 md:py-4 bg-[#0071eb] hover:bg-[#004FA6] mt-6 mb-4 font-[Arimo] font-black" href="#">
+                                        <span class="whitespace-nowrap headline headline--6">Comenzar</span>
+                                    </a>
+                                    <a class="rounded-md text-center transition-all ease-in-out hover:-translate-y-0 min-w-[250px] px-10 py-3 md:py-4 border-1 border-[#0071eb] bg-transparent hover:bg-[#B3D4F8] text-[#0071eb] mb-4 font-[Arimo] font-black" href="#">
+                                        <span class="whitespace-nowrap headline headline--6">Acceder</span>
+                                    </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<style>
+    button {
+        cursor: pointer;
+    }
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconX = document.getElementById('icon-x');
+
+        if (menuToggle && mobileMenu && iconMenu && iconX) {
+            menuToggle.addEventListener('click', () => {
+
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('pointer-events-none');
+                mobileMenu.classList.toggle('-translate-y-4');
+                
+                mobileMenu.classList.toggle('opacity-100');
+                mobileMenu.classList.toggle('pointer-events-auto');
+                mobileMenu.classList.toggle('translate-y-0');
+
+                iconMenu.classList.toggle('rotate-0');
+                iconMenu.classList.toggle('opacity-100');
+                iconMenu.classList.toggle('scale-100');
+                
+                iconMenu.classList.toggle('rotate-90');
+                iconMenu.classList.toggle('opacity-0');
+                iconMenu.classList.toggle('scale-0');
+                
+                iconX.classList.toggle('-rotate-90');
+                iconX.classList.toggle('opacity-0');
+                iconX.classList.toggle('scale-0');
+                
+                iconX.classList.toggle('rotate-0');
+                iconX.classList.toggle('opacity-100');
+                iconX.classList.toggle('scale-100');
+            });
+        }
+    });
+</script>
