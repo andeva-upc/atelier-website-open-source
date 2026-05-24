@@ -1,0 +1,113 @@
+---
+import TeamCard from './react/TeamCard'
+import VideoCard from './react/VideoCard'
+---
+
+<section class="md:section py-8 px-5 flex flex-col justify-center w-full max-w-7xl ml-auto mr-auto">
+    <h2 class="text-balance mb-[2.5rem] text-5xl md:text-6xl font-['Mona_Sans'] font-bold">Nuestro <span class="text-[#0071eb]">Equipo</span></h2>
+    
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mb-4">
+        <TeamCard 
+            name="Joel Huamani Estefanero" 
+            role="" 
+            username="shouydev" 
+            avatar="/images/Joel.webp"
+            quoteBefore="Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. "
+            quoteHighlight="Especializado en liderar y controlar"
+            quoteAfter=" el flujo del proyecto."
+            highlightColor="blue"
+            client:load
+        />
+        <TeamCard 
+            name="Adiel Abdiaz Sanchez Santin" 
+            role="" 
+            username="xs4el" 
+            avatar="/images/Adiel.webp"
+            quoteBefore="Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. "
+            quoteHighlight="Especializado en Front-End"
+            quoteAfter="."
+            highlightColor="blue"
+            client:load
+        />
+        <TeamCard 
+            name="Aldo Jeanfranco Machacca Soto" 
+            role="" 
+            username="AldoDev20" 
+            avatar="/images/Aldo.webp"
+            quoteBefore="Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. "
+            quoteHighlight="Especializado en Web Services"
+            quoteAfter=" y desarrollo Back-End."
+            highlightColor="blue"
+            client:load
+        />
+        <TeamCard 
+            name="Jennifer Yamilet Riveros Vera" 
+            role="" 
+            username="Jennivz" 
+            avatar="/images/Jennifer.webp"
+            quoteBefore="Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. "
+            quoteHighlight="Especializada en datos"
+            quoteAfter="."
+            highlightColor="blue"
+            client:load
+        />
+        <TeamCard 
+            name="Luis Daniel Granda Ibarra" 
+            role="" 
+            username="danieltyuyu" 
+            avatar="/images/Daniel.webp"
+            quoteBefore="Estudiante de la Universidad Peruana de Ciencias Aplicadas cursando la carrera de Ingeniería de Software. "
+            quoteHighlight="Especializado en los datos"
+            quoteAfter=" y visualización del proyecto."
+            highlightColor="blue"
+            client:load
+        />
+        <TeamCard 
+            name="Mariana Hortencia Morocho Pinedo" 
+            role="" 
+            username="Patto04" 
+            avatar="/images/Mariana.webp"
+            quoteBefore="Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. "
+            quoteHighlight="Especializada en datos"
+            quoteAfter="."
+            highlightColor="blue"
+            client:load
+        />
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1  gap-4">
+        <div class="w-full">
+            <VideoCard 
+                client:load 
+                youtubeUrl="https://www.youtube.com/embed/QGMqat4oA00?si=A2d-jfye9Rov0CmL" 
+                label="@Video-About-The-Team"
+                quoteBefore="«En Atelier, creemos que la tecnología no debería ser complicada. "
+                quoteHighlight="Nuestra misión es empoderar a los talleres mecánicos"
+                quoteAfter="con herramientas inteligentes y automatizadas de última generación»."
+            />
+        </div>
+    
+        <div class="w-full">
+            <VideoCard 
+                client:load 
+                youtubeUrl="https://www.youtube.com/embed/QGMqat4oA00?si=A2d-jfye9Rov0CmL" 
+                label="@Video-About-The-Product"
+            />
+        </div>
+    </div>
+</section>
+
+<style>
+    @media (min-width: 768px) {
+        .md\:section {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+    }
+</style>
