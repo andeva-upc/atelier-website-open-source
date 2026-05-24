@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 
 const VERT = `#version 300 es
@@ -235,6 +235,34 @@ export default function MiddleCallToAction({
   buttonText = "Descubre más",
   children
 }: MiddleCallToActionProps) {
+  const [currentLang, setCurrentLang] = useState('es');
+
+  useEffect(() => {
+    const initial = localStorage.getItem('atelier-lang') || 'es';
+    setCurrentLang(initial);
+
+    const handleLangChange = (e: any) => {
+      setCurrentLang(e.detail.lang);
+    };
+    window.addEventListener('languagechange', handleLangChange);
+    return () => window.removeEventListener('languagechange', handleLangChange);
+  }, []);
+
+  const content = {
+    es: {
+      title: title,
+      subtitle: subtitle,
+      buttonText: buttonText
+    },
+    en: {
+      title: "Your profitability, fully maximized",
+      subtitle: "Atelier introduces powerful new telemetry features to take your workshop to another level.",
+      buttonText: "Register now"
+    }
+  };
+
+  const activeText = content[currentLang as 'es' | 'en'];
+
   return (
     <div className="relative w-full overflow-hidden bg-[#111] py-28 px-6 md:py-36 md:px-12 flex flex-col items-center justify-center text-center my-8 select-none">
       
@@ -252,11 +280,11 @@ export default function MiddleCallToAction({
       {/* Overlay Content Card matching Evernote style */}
       <div className="relative z-10 max-w-4xl flex flex-col items-center gap-10">
         <h2 className="font-['Mona_Sans'] text-3xl md:text-4xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] text-pretty">
-          {title}
+          {activeText.title}
         </h2>
         
         <p className="font-['Arimo'] text-[#fff] text-2xl md:text-3xl max-w-4xl leading-relaxed text-pretty">
-          {subtitle}
+          {activeText.subtitle}
         </p>
 
         {/* Children element injection (if any) */}
@@ -268,7 +296,7 @@ export default function MiddleCallToAction({
 
         {/* Custom Lime/Evernote green CTA button */}
         <button className="w-full md:w-auto mt-4 px-16 py-4 bg-[#0071eb] hover:bg-[#004FA6] text-white font-semibold text-lg rounded-md transition-all hover:scale-[1.02] active:scale-[0.98] duration-200 cursor-pointer font-['Arimo'] text-xl lg:text-2xl">
-          {buttonText}
+          {activeText.buttonText}
         </button>
       </div>
 

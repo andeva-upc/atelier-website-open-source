@@ -15,6 +15,40 @@ const getYoutubeId = (url: string) => {
     return (match && match[2].length === 11) ? match[2] : null;
 };
 
+const localizedQuotes: Record<string, {
+    es: { before: string; highlight: string; after: string; label: string };
+    en: { before: string; highlight: string; after: string; label: string };
+}> = {
+    "@Video-About-The-Team": {
+        es: {
+            before: "«En Atelier, creemos que la tecnología no debería ser complicada. ",
+            highlight: "Nuestra misión es empoderar a los talleres mecánicos",
+            after: "con herramientas inteligentes y automatizadas de última generación».",
+            label: "@Video-Sobre-El-Equipo"
+        },
+        en: {
+            before: "“At Atelier, we believe that technology shouldn't be complicated. ",
+            highlight: "Our mission is to empower mechanical workshops",
+            after: "with next-generation intelligent and automated tools.”",
+            label: "@Video-About-The-Team"
+        }
+    },
+    "@Video-About-The-Product": {
+        es: {
+            before: "",
+            highlight: "",
+            after: "",
+            label: "@Video-Sobre-El-Producto"
+        },
+        en: {
+            before: "",
+            highlight: "",
+            after: "",
+            label: "@Video-About-The-Product"
+        }
+    }
+};
+
 export default function VideoCard({
     quoteBefore,
     quoteHighlight,
@@ -26,9 +60,18 @@ export default function VideoCard({
     const [mounted, setMounted] = useState(false);
     const youtubeId = getYoutubeId(youtubeUrl) || 'QGMqat4oA00';
     const [thumbnailSrc, setThumbnailSrc] = useState(`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`);
+    const [currentLang, setCurrentLang] = useState<'es' | 'en'>('es');
 
     useEffect(() => {
         setMounted(true);
+        const initial = (localStorage.getItem('atelier-lang') || 'es') as 'es' | 'en';
+        setCurrentLang(initial);
+
+        const handleLangChange = (e: any) => {
+            setCurrentLang(e.detail.lang);
+        };
+        window.addEventListener('languagechange', handleLangChange);
+        return () => window.removeEventListener('languagechange', handleLangChange);
     }, []);
 
     // Handle ESC key to close modal
@@ -55,19 +98,27 @@ export default function VideoCard({
         };
     }, [isOpen]);
 
+    // Resolve the active translations based on label key
+    const localized = localizedQuotes[label]?.[currentLang] || {
+        before: quoteBefore || "",
+        highlight: quoteHighlight || "",
+        after: quoteAfter || "",
+        label: label
+    };
+
     return (
         <>
             <div className="group/card border border-black bg-white flex flex-col p-6 md:p-8 rounded-none transition-all duration-300 hover:shadow-md cursor-default h-full justify-center">
-                {quoteBefore && (
+                {localized.before && (
                     <div className="mb-6">
                         <p className="font-[Arimo] text-[16px] md:text-[18px] text-black leading-relaxed text-left">
-                            {quoteBefore}
-                            {quoteHighlight && (
+                            {localized.before}
+                            {localized.highlight && (
                                 <span className="bg-[#B3D4F8] px-1 py-0.5 mx-0.5 font-medium text-black">
-                                    {quoteHighlight}
+                                    {localized.highlight}
                                 </span>
                             )}
-                            {quoteAfter}
+                            {localized.after}
                         </p>
                     </div>
                 )}
@@ -80,7 +131,7 @@ export default function VideoCard({
                     <img 
                         className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" 
                         src={thumbnailSrc} 
-                        alt="Miniatura de video"
+                        alt={currentLang === 'es' ? "Miniatura de video" : "Video thumbnail"}
                         onError={() => {
                             // Fallback to high quality default if maxresdefault doesn't exist
                             if (thumbnailSrc !== `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`) {
@@ -105,7 +156,7 @@ export default function VideoCard({
                 
                 <div className="w-full text-end">
                     <span className="bg-[#B3D4F8] px-1 py-0.5 mx-0.5 font-semibold text-lg text-black">
-                        {label}
+                        {localized.label}
                     </span>
                 </div>
             </div>
@@ -123,7 +174,7 @@ export default function VideoCard({
                     <button 
                         onClick={() => setIsOpen(false)}
                         className="absolute top-4 right-4 z-10 text-white hover:text-zinc-300 transition-colors duration-300 cursor-pointer focus:outline-none"
-                        aria-label="Cerrar video"
+                        aria-label={currentLang === 'es' ? "Cerrar video" : "Close video"}
                     >
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 

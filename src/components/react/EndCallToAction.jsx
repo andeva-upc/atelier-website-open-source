@@ -1,14 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 export default function EndCallToAction({
-    title = "Upgrade your ERP now.",
-    subtitle = "Fast to deploy. Easy to change. Built to scale.",
-    buttonText = "Book a demo"
+    title = "Actualiza tu taller ahora.",
+    subtitle = "Rápido de implementar. Fácil de cambiar. Diseñado para escalar.",
+    buttonText = "Agenda una demo"
 }) {
     const [scrollY, setScrollY] = useState(0);
+    const [currentLang, setCurrentLang] = useState('es');
     const containerRef = useRef(null);
 
     useEffect(() => {
+        const initial = localStorage.getItem('atelier-lang') || 'es';
+        setCurrentLang(initial);
+
+        const handleLangChange = (e) => {
+            setCurrentLang(e.detail.lang);
+        };
+        window.addEventListener('languagechange', handleLangChange);
+
         const handleScroll = () => {
             if (!containerRef.current) return;
             const rect = containerRef.current.getBoundingClientRect();
@@ -32,10 +41,26 @@ export default function EndCallToAction({
         handleScroll();
 
         return () => {
+            window.removeEventListener('languagechange', handleLangChange);
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleScroll);
         };
     }, []);
+
+    const content = {
+        es: {
+            title: title,
+            subtitle: subtitle,
+            buttonText: buttonText
+        },
+        en: {
+            title: "Upgrade your workshop now.",
+            subtitle: "Fast to deploy. Easy to change. Built to scale.",
+            buttonText: "Upgrade your workshop"
+        }
+    };
+
+    const activeText = content[currentLang];
 
     // Parallax translations: different rates for left and right creates a multi-layered 3D depth effect!
     const leftTranslateY = scrollY * -0.06;
@@ -223,7 +248,7 @@ export default function EndCallToAction({
                     
                     {/* Header: Mona Sans bold, high contrast, clean typography */}
                     <h2 className="font-['Mona_Sans'] text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#212121] leading-[1.1] mb-6">
-                        {title}
+                        {activeText.title}
                     </h2>
 
                     {/* Animated Connection Double-headed Arrow Structure */}
@@ -241,13 +266,13 @@ export default function EndCallToAction({
 
                     {/* Subtitle: Arimo light elegant text */}
                     <p className="font-['Arimo'] text-[#212121] text-lg sm:text-xl lg:text-2xl font-normal leading-relaxed opacity-85 mb-8 max-w-md">
-                        {subtitle}
+                        {activeText.subtitle}
                     </p>
 
                     {/* Button CTA: Matte black premium pill-button */}
                     <button className="group rounded-md px-10 py-4 bg-[#212121] hover:bg-[#0071eb] text-white font-semibold text-lg transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex items-center gap-2">
                         <span className="font-['Arimo'] leading-none">
-                            {buttonText}
+                            {activeText.buttonText}
                         </span>
                         {/* Elegant micro-interactive arrow */}
                         <svg 

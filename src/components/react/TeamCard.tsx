@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 interface TeamCardProps {
     name: string;
     role: string;
@@ -18,6 +20,81 @@ const colorMap: Record<string, string> = {
     teal: 'bg-[#ccfbf1]',
 };
 
+const memberQuotes: Record<string, { es: { before: string, highlight: string, after: string }, en: { before: string, highlight: string, after: string } }> = {
+    shouydev: {
+        es: {
+            before: "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. ",
+            highlight: "Especializado en liderar y controlar",
+            after: " el flujo del proyecto."
+        },
+        en: {
+            before: "Student of Software Engineering at Universidad Peruana de Ciencias Aplicadas. ",
+            highlight: "Specialized in leading and controlling",
+            after: " the project flow."
+        }
+    },
+    xs4el: {
+        es: {
+            before: "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. ",
+            highlight: "Especializado en Front-End",
+            after: "."
+        },
+        en: {
+            before: "Student of Software Engineering at Universidad Peruana de Ciencias Aplicadas. ",
+            highlight: "Specialized in Front-End development",
+            after: "."
+        }
+    },
+    AldoDev20: {
+        es: {
+            before: "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. ",
+            highlight: "Especializado en Web Services",
+            after: " y desarrollo Back-End."
+        },
+        en: {
+            before: "Student of Software Engineering at Universidad Peruana de Ciencias Aplicadas. ",
+            highlight: "Specialized in Web Services",
+            after: " and Back-End development."
+        }
+    },
+    Jennivz: {
+        es: {
+            before: "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. ",
+            highlight: "Especializada en datos",
+            after: "."
+        },
+        en: {
+            before: "Student of Software Engineering at Universidad Peruana de Ciencias Aplicadas. ",
+            highlight: "Specialized in data engineering",
+            after: "."
+        }
+    },
+    danieltyuyu: {
+        es: {
+            before: "Estudiante de la Universidad Peruana de Ciencias Aplicadas cursando la carrera de Ingeniería de Software. ",
+            highlight: "Especializado en los datos",
+            after: " y visualización del proyecto."
+        },
+        en: {
+            before: "Student of Software Engineering at Universidad Peruana de Ciencias Aplicadas. ",
+            highlight: "Specialized in data analytics",
+            after: " and project visualization."
+        }
+    },
+    Patto04: {
+        es: {
+            before: "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. ",
+            highlight: "Especializada en datos",
+            after: "."
+        },
+        en: {
+            before: "Student of Software Engineering at Universidad Peruana de Ciencias Aplicadas. ",
+            highlight: "Specialized in data management",
+            after: "."
+        }
+    }
+};
+
 export default function TeamCard({
     name,
     role,
@@ -29,16 +106,35 @@ export default function TeamCard({
     highlightColor = 'blue',
 }: TeamCardProps) {
     const bgClass = colorMap[highlightColor] || highlightColor;
+    const [currentLang, setCurrentLang] = useState<'es' | 'en'>('es');
+
+    useEffect(() => {
+        const initial = (localStorage.getItem('atelier-lang') || 'es') as 'es' | 'en';
+        setCurrentLang(initial);
+
+        const handleLangChange = (e: any) => {
+            setCurrentLang(e.detail.lang);
+        };
+        window.addEventListener('languagechange', handleLangChange);
+        return () => window.removeEventListener('languagechange', handleLangChange);
+    }, []);
+
+    // Get the localized quote based on username
+    const localized = memberQuotes[username]?.[currentLang] || {
+        before: quoteBefore,
+        highlight: quoteHighlight,
+        after: quoteAfter
+    };
 
     return (
         <a href={`https://github.com/${username}`} className="group border-1 border-black text-black bg-white flex flex-col justify-between p-6 md:p-8 h-full transition-all duration-300 hover:shadow-md rounded-none cursor-pointer">
             <div>
                 <p className="font-[Arimo] text-md md:text-lg leading-relaxed text-left">
-                    {quoteBefore}
+                    {localized.before}
                     <span className={`${bgClass} px-1 py-0.5 mx-0.5 font-medium`}>
-                        {quoteHighlight}
+                        {localized.highlight}
                     </span>
-                    {quoteAfter}
+                    {localized.after}
                 </p>
             </div>
             

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/header.astro'
 import Footer from '../components/footer.astro'
+import LanguageSelector from '../components/react/LanguageSelector'
 ---
 
 
@@ -22,6 +23,62 @@ import Footer from '../components/footer.astro'
 			<slot />
 		</main>
 		<Footer />
+		<LanguageSelector client:load />
+		<script is:inline>
+			const translations = {
+				es: {
+					"nav.access": "Acceder",
+					"nav.start": "Comience ahora",
+					"nav.startMobile": "Comenzar",
+					"hero.title": "Transformar tu <span class=\"text-[#0071eb]\">taller</span>",
+					"hero.subtitle": "Optimiza tu taller y prevén fallas con telemetría en tiempo real, todo en un solo lugar.",
+					"hero.cta": "Únete al cambio",
+					"hero.loginLabel": "¿Ya tienes una cuenta?",
+					"hero.loginLink": "Iniciar Sesion",
+					"ourteam.title": "Nuestro <span class=\"text-[#0071eb]\">Equipo</span>",
+					"footer.connect": "Conectar",
+					"footer.legal": "Legal",
+					"footer.terms": "Términos y condiciones",
+					"footer.privacy": "Política de privacidad"
+				},
+				en: {
+					"nav.access": "Log in",
+					"nav.start": "Get started",
+					"nav.startMobile": "Get started",
+					"hero.title": "Transform your <span class=\"text-[#0071eb]\">workshop</span>",
+					"hero.subtitle": "Optimize your workshop and prevent failures with real-time telemetry, all in one place.",
+					"hero.cta": "Join the change",
+					"hero.loginLabel": "Already have an account?",
+					"hero.loginLink": "Log in",
+					"ourteam.title": "Our <span class=\"text-[#0071eb]\">Team</span>",
+					"footer.connect": "Connect",
+					"footer.legal": "Legal",
+					"footer.terms": "Terms & conditions",
+					"footer.privacy": "Privacy policy"
+				}
+			};
+
+			function applyTranslations(lang) {
+				document.querySelectorAll('[data-i18n]').forEach(el => {
+					const key = el.getAttribute('data-i18n');
+					if (translations[lang] && translations[lang][key]) {
+						el.innerHTML = translations[lang][key];
+					}
+				});
+				document.documentElement.lang = lang;
+			}
+
+			// Apply stored language on load
+			document.addEventListener('DOMContentLoaded', () => {
+				const activeLang = localStorage.getItem('atelier-lang') || 'es';
+				applyTranslations(activeLang);
+			});
+
+			// Listen to languagechange event
+			window.addEventListener('languagechange', (e) => {
+				applyTranslations(e.detail.lang);
+			});
+		</script>
 	</body>
 </html>
 
