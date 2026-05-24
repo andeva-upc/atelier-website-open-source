@@ -152,6 +152,7 @@ export default function VideoCard({
                             </svg>
                         </div>
                     </div>
+                </div>
                 
                 <div className="w-full text-end">
                     <span className="bg-[#B3D4F8] px-1 py-0.5 mx-0.5 font-semibold text-lg text-black">
