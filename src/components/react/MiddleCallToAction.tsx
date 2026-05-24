@@ -236,7 +236,7 @@ export default function MiddleCallToAction({
   children
 }: MiddleCallToActionProps) {
   return (
-    <div className="relative w-full overflow-hidden bg-[#111] py-16 px-6 md:py-24 md:px-12 flex flex-col items-center justify-center text-center my-16 shadow-2xl select-none">
+    <div className="relative w-full overflow-hidden bg-[#111] py-28 px-6 md:py-36 md:px-12 flex flex-col items-center justify-center text-center my-8 select-none">
       
       {/* Background Aurora WebGL Animation */}
       <div className="absolute inset-0 w-full h-full pointer-events-none opacity-45 mix-blend-screen z-0">
@@ -250,12 +250,12 @@ export default function MiddleCallToAction({
       </div>
 
       {/* Overlay Content Card matching Evernote style */}
-      <div className="relative z-10 max-w-3xl flex flex-col items-center gap-6">
-        <h2 className="font-['Mona_Sans'] text-4xl md:text-5xl lg:text-[54px] font-bold text-white tracking-tight leading-[1.1] text-pretty">
+      <div className="relative z-10 max-w-4xl flex flex-col items-center gap-10">
+        <h2 className="font-['Mona_Sans'] text-3xl md:text-4xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] text-pretty">
           {title}
         </h2>
         
-        <p className="font-['Arimo'] text-[#D4D4D8] text-lg md:text-xl max-w-2xl leading-relaxed text-pretty">
+        <p className="font-['Arimo'] text-[#fff] text-2xl md:text-3xl max-w-4xl leading-relaxed text-pretty">
           {subtitle}
         </p>
 
@@ -267,7 +267,7 @@ export default function MiddleCallToAction({
         )}
 
         {/* Custom Lime/Evernote green CTA button */}
-        <button className="w-full md:w-auto mt-4 px-16 py-4 bg-[#0071eb] hover:bg-[#004FA6] text-white font-bold text-lg rounded-md transition-all hover:scale-[1.02] active:scale-[0.98] duration-200 cursor-pointer font-['Arimo']">
+        <button className="w-full md:w-auto mt-4 px-16 py-4 bg-[#0071eb] hover:bg-[#004FA6] text-white font-semibold text-lg rounded-md transition-all hover:scale-[1.02] active:scale-[0.98] duration-200 cursor-pointer font-['Arimo'] text-xl lg:text-2xl">
           {buttonText}
         </button>
       </div>
