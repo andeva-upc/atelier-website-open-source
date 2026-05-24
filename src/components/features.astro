@@ -1,0 +1,20 @@
+---
+import FeaturesCarousel from './react/FeaturesCarousel';
+---
+
+<section id="features" class="md:section py-16 px-5 md:py-24 bg-white border-t border-gray-100/50">
+    <FeaturesCarousel client:load />
+</section>
+
+<style>
+        @media (min-width: 768px) {
+        .md\:section {
+            display: flex;
+            width: 100%;
+            align-items: baseline;
+            justify-content: center;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+    }
+</style>
