@@ -1,13 +1,29 @@
 ---
 import FeaturesCarousel from './react/FeaturesCarousel';
+import MiddleCallToAction from './react/MiddleCallToAction'
 ---
 
 <section id="features" class="md:section py-16 px-5 md:py-24 bg-white border-t border-gray-100/50">
     <FeaturesCarousel client:load />
 </section>
 
+<section>
+    <div class="container w-full flex items-center justify-center">
+        <MiddleCallToAction 
+            client:load 
+            colorStops={["#0071eb","#004FA6","#5227FF"]} 
+            blend={0.3} 
+            amplitude={2.0} 
+            speed={1}
+            title="Tu rentabilidad, potenciada al máximo"
+            subtitle="Atelier introduce nuevas y potentes funciones de telemetria para llevar tu taller a otro nivel."
+            buttonText= "Regístrate"
+        />
+    </div>
+</section>
+
 <style>
-        @media (min-width: 768px) {
+    @media (min-width: 768px) {
         .md\:section {
             display: flex;
             width: 100%;
