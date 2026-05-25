@@ -50,3 +50,26 @@
 .delay-600 { transition-delay: 600ms; }
 .delay-700 { transition-delay: 700ms; }
 .delay-800 { transition-delay: 800ms; }
+
+/* --- Premium Sliding Underline Animation --- */
+.link-underline-animated {
+    position: relative;
+    text-decoration: none !important;
+}
+
+.link-underline-animated::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #0071eb;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-underline-animated:hover::after {
+    transform: scaleX(1);
+}
