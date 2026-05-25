@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function LanguageSelector() {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeLang, setActiveLang] = useState('es'); // Default to Spanish as per website
+    const [activeLang, setActiveLang] = useState('en'); // Default to English as per website
     const containerRef = useRef(null);
 
     // Auto-close menu when clicking outside & Sync initial language state
     useEffect(() => {
-        const initial = localStorage.getItem('atelier-lang') || 'es';
+        const initial = localStorage.getItem('atelier-lang') || 'en';
         setActiveLang(initial);
 
         const handleLangChange = (e) => {

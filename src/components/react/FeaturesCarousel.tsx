@@ -287,10 +287,10 @@ const mockupText = {
 export default function FeaturesCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
-  const [currentLang, setCurrentLang] = useState<'es' | 'en'>('es');
+  const [currentLang, setCurrentLang] = useState<'es' | 'en'>('en');
 
   useEffect(() => {
-    const initial = (localStorage.getItem('atelier-lang') || 'es') as 'es' | 'en';
+    const initial = (localStorage.getItem('atelier-lang') || 'en') as 'es' | 'en';
     setCurrentLang(initial);
 
     const handleLangChange = (e: any) => {

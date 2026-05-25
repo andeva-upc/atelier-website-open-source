@@ -60,11 +60,11 @@ export default function VideoCard({
     const [mounted, setMounted] = useState(false);
     const youtubeId = getYoutubeId(youtubeUrl) || 'QGMqat4oA00';
     const [thumbnailSrc, setThumbnailSrc] = useState(`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`);
-    const [currentLang, setCurrentLang] = useState<'es' | 'en'>('es');
+    const [currentLang, setCurrentLang] = useState<'es' | 'en'>('en');
 
     useEffect(() => {
         setMounted(true);
-        const initial = (localStorage.getItem('atelier-lang') || 'es') as 'es' | 'en';
+        const initial = (localStorage.getItem('atelier-lang') || 'en') as 'es' | 'en';
         setCurrentLang(initial);
 
         const handleLangChange = (e: any) => {

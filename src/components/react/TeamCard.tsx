@@ -106,10 +106,10 @@ export default function TeamCard({
     highlightColor = 'blue',
 }: TeamCardProps) {
     const bgClass = colorMap[highlightColor] || highlightColor;
-    const [currentLang, setCurrentLang] = useState<'es' | 'en'>('es');
+    const [currentLang, setCurrentLang] = useState<'es' | 'en'>('en');
 
     useEffect(() => {
-        const initial = (localStorage.getItem('atelier-lang') || 'es') as 'es' | 'en';
+        const initial = (localStorage.getItem('atelier-lang') || 'en') as 'es' | 'en';
         setCurrentLang(initial);
 
         const handleLangChange = (e: any) => {

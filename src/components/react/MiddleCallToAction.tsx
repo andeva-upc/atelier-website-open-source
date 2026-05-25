@@ -235,10 +235,10 @@ export default function MiddleCallToAction({
   buttonText = "Descubre más",
   children
 }: MiddleCallToActionProps) {
-  const [currentLang, setCurrentLang] = useState('es');
+  const [currentLang, setCurrentLang] = useState('en');
 
   useEffect(() => {
-    const initial = localStorage.getItem('atelier-lang') || 'es';
+    const initial = localStorage.getItem('atelier-lang') || 'en';
     setCurrentLang(initial);
 
     const handleLangChange = (e: any) => {

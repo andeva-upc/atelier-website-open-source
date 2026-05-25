@@ -6,11 +6,11 @@ export default function EndCallToAction({
     buttonText = "Agenda una demo"
 }) {
     const [scrollY, setScrollY] = useState(0);
-    const [currentLang, setCurrentLang] = useState('es');
+    const [currentLang, setCurrentLang] = useState('en');
     const containerRef = useRef(null);
 
     useEffect(() => {
-        const initial = localStorage.getItem('atelier-lang') || 'es';
+        const initial = localStorage.getItem('atelier-lang') || 'en';
         setCurrentLang(initial);
 
         const handleLangChange = (e) => {
