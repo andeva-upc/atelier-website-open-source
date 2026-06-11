@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "ZizouSlab-Black";
+    font-weight: 800;
+    font-style: normal;
+    src: url('/fonts/Zizou Slab-Black.otf') format('opentype');
+}
+
+/* --- Scroll Reveal Animations (Premium AOS Styles) --- */
+.reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal {
+    transform: translateY(35px);
+}
+
+.reveal-left {
+    transform: translateX(-45px);
+}
+
+.reveal-right {
+    transform: translateX(45px);
+}
+
+.reveal-scale {
+    transform: scale(0.96);
+}
+
+/* Active states (triggered by Intersection Observer) */
+.reveal.active, 
+.reveal-left.active, 
+.reveal-right.active, 
+.reveal-scale.active {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Staggered Delay classes for organic, premium cascaded animations */
+.delay-75  { transition-delay: 75ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-700 { transition-delay: 700ms; }
+.delay-800 { transition-delay: 800ms; }
+
+/* --- Premium Sliding Underline Animation --- */
+.link-underline-animated {
+    position: relative;
+    text-decoration: none !important;
+}
+
+.link-underline-animated::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #0071eb;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-underline-animated:hover::after {
+    transform: scaleX(1);
+}

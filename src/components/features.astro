@@ -1,0 +1,36 @@
+---
+import FeaturesCarousel from './react/FeaturesCarousel';
+import MiddleCallToAction from './react/MiddleCallToAction'
+---
+
+<section id="features" class="reveal md:section py-8 px-5 bg-white border-t border-gray-100/50">
+    <FeaturesCarousel client:load />
+</section>
+
+<section class="reveal">
+    <div class="w-full flex items-center justify-center">
+        <MiddleCallToAction 
+            client:load 
+            colorStops={["#0071eb","#004FA6","#5227FF"]} 
+            blend={0.3} 
+            amplitude={2.0} 
+            speed={1}
+            title="Tu rentabilidad, potenciada al máximo"
+            subtitle="Atelier introduce nuevas y potentes funciones de telemetria para llevar tu taller a otro nivel."
+            buttonText= "Regístrate"
+        />
+    </div>
+</section>
+
+<style>
+    @media (min-width: 768px) {
+        .md\:section {
+            display: flex;
+            width: 100%;
+            align-items: baseline;
+            justify-content: center;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+    }
+</style>

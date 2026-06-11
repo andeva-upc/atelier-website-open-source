@@ -1,0 +1,173 @@
+---
+import Header from '../components/header.astro'
+import Footer from '../components/footer.astro'
+import LanguageSelector from '../components/react/LanguageSelector'
+---
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/nut-color-primary.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Atelier</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<Header />
+		<main id="main-content" transition:animate="fade" class="pt-20 md:pt-10">
+			<slot />
+		</main>
+		<Footer />
+		<LanguageSelector client:load />
+		<script is:inline>
+			const translations = {
+				es: {
+					"nav.access": "Acceder",
+					"nav.start": "Comience ahora",
+					"nav.startMobile": "Comenzar",
+					"hero.title": "Transformar tu <span class=\"text-[#0071eb]\">taller</span>",
+					"hero.subtitle": "Optimiza tu taller y prevén fallas con telemetría en tiempo real, todo en un solo lugar.",
+					"hero.cta": "Únete al cambio",
+					"hero.loginLabel": "¿Ya tienes una cuenta?",
+					"hero.loginLink": "Iniciar Sesion",
+					"ourteam.title": "Nuestro <span class=\"text-[#0071eb]\">Equipo</span>",
+					"footer.connect": "Conectar",
+					"footer.legal": "Legal",
+					"footer.terms": "Términos y condiciones",
+					"footer.privacy": "Política de privacidad",
+					"pricing.title": "Planes creados a su <span class=\"text-[#0071eb]\">medida</span>",
+					"pricing.subtitle": "Elige el plan ideal para automatizar, controlar y escalar la rentabilidad de tu taller.",
+					"pricing.lite.title": "Lite",
+					"pricing.lite.subtitle": "Conoce y explora el uso de atelier",
+					"pricing.lite.includes": "Incluye:",
+					"pricing.lite.feat1": "Gestión básica ERP",
+					"pricing.lite.feat2": "Inventario",
+					"pricing.lite.feat3": "Conexión de hasta 5 vehículos",
+					"pricing.lite.feat4": "Próximas funciones",
+					"pricing.lite.cta": "Seleccionar Lite",
+					"pricing.pro.title": "Pro",
+					"pricing.pro.subtitle": "Experimenta el poder de infinitas posibilidades",
+					"pricing.pro.includes": "Todo lo de Lite, más:",
+					"pricing.pro.feat1": "Todas las funciones del Plan Lite",
+					"pricing.pro.feat2": "Gestión avanzada ERP",
+					"pricing.pro.feat3": "Módulo de facturación electrónica",
+					"pricing.pro.feat4": "Conexión de hasta 20 vehículos",
+					"pricing.pro.cta": "Seleccionar Pro",
+					"pricing.max.title": "Max",
+					"pricing.max.subtitle": "Desbloquea el máximo rendimiento de atelier",
+					"pricing.max.includes": "Todo lo de Pro, más:",
+					"pricing.max.feat1": "Todas las funciones del Plan Pro",
+					"pricing.max.feat2": "Reportes de rentabilidad",
+					"pricing.max.feat3": "Conexión de hasta 50 vehículos",
+					"pricing.max.feat4": "Automatizaciones",
+					"pricing.max.cta": "Seleccionar Max",
+					"pricing.perMonth": "/ mes",
+					"pricing.lite.dotsLabel": "Ver plan Lite",
+					"pricing.pro.dotsLabel": "Ver plan Pro",
+					"pricing.max.dotsLabel": "Ver plan Max"
+				},
+				en: {
+					"nav.access": "Log in",
+					"nav.start": "Get started",
+					"nav.startMobile": "Get started",
+					"hero.title": "Transform your <span class=\"text-[#0071eb]\">workshop</span>",
+					"hero.subtitle": "Optimize your workshop and prevent failures with real-time telemetry, all in one place.",
+					"hero.cta": "Join the change",
+					"hero.loginLabel": "Already have an account?",
+					"hero.loginLink": "Log in",
+					"ourteam.title": "Our <span class=\"text-[#0071eb]\">Team</span>",
+					"footer.connect": "Connect",
+					"footer.legal": "Legal",
+					"footer.terms": "Terms & conditions",
+					"footer.privacy": "Privacy policy",
+					"pricing.title": "Plans tailored to your <span class=\"text-[#0071eb]\">needs</span>",
+					"pricing.subtitle": "Choose the perfect plan to automate, control, and scale your workshop's profitability.",
+					"pricing.lite.title": "Lite",
+					"pricing.lite.subtitle": "Get to know and explore the use of atelier",
+					"pricing.lite.includes": "Includes:",
+					"pricing.lite.feat1": "Basic ERP management",
+					"pricing.lite.feat2": "Inventory",
+					"pricing.lite.feat3": "Connection for up to 5 vehicles",
+					"pricing.lite.feat4": "Upcoming features",
+					"pricing.lite.cta": "Select Lite",
+					"pricing.pro.title": "Pro",
+					"pricing.pro.subtitle": "Experience the power of infinite possibilities",
+					"pricing.pro.includes": "Everything in Lite, plus:",
+					"pricing.pro.feat1": "All features from Lite Plan",
+					"pricing.pro.feat2": "Advanced ERP management",
+					"pricing.pro.feat3": "Electronic invoicing module",
+					"pricing.pro.feat4": "Connection for up to 20 vehicles",
+					"pricing.pro.cta": "Select Pro",
+					"pricing.max.title": "Max",
+					"pricing.max.subtitle": "Unlock the maximum performance of atelier",
+					"pricing.max.includes": "Everything in Pro, plus:",
+					"pricing.max.feat1": "All features from Pro Plan",
+					"pricing.max.feat2": "Profitability reports",
+					"pricing.max.feat3": "Connection for up to 50 vehicles",
+					"pricing.max.feat4": "Automations",
+					"pricing.max.cta": "Select Max",
+					"pricing.perMonth": "/ month",
+					"pricing.lite.dotsLabel": "View Lite plan",
+					"pricing.pro.dotsLabel": "View Pro plan",
+					"pricing.max.dotsLabel": "View Max plan"
+				}
+			};
+
+			function applyTranslations(lang) {
+				document.querySelectorAll('[data-i18n]').forEach(el => {
+					const key = el.getAttribute('data-i18n');
+					if (translations[lang] && translations[lang][key]) {
+						el.innerHTML = translations[lang][key];
+					}
+				});
+				document.documentElement.lang = lang;
+			}
+
+			// Apply stored language & init Scroll Reveal on load
+			document.addEventListener('DOMContentLoaded', () => {
+				const activeLang = localStorage.getItem('atelier-lang') || 'en';
+				applyTranslations(activeLang);
+
+				// Initialize Scroll Reveal Observer
+				const observerOptions = {
+					root: null,
+					rootMargin: '0px 0px -8% 0px',
+					threshold: 0.08
+				};
+
+				const observer = new IntersectionObserver((entries, obs) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('active');
+							obs.unobserve(entry.target);
+						}
+					});
+				}, observerOptions);
+
+				const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+				revealElements.forEach(el => observer.observe(el));
+			});
+
+			// Listen to languagechange event
+			window.addEventListener('languagechange', (e) => {
+				applyTranslations(e.detail.lang);
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	html, body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+	main {
+		background-color: white;
+	}
+</style>

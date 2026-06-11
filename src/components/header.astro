@@ -1,0 +1,158 @@
+---
+import Menu2 from "../../public/images/menu-2.astro";
+import X from "../../public/images/x.astro"
+---
+
+<header class="z-1 w-full fixed bg-white">
+    <div class="border-b border-transparent">
+        <nav class="container flex h-16 md:h-20 w-full items-center justify-between px-5 lg:px-0">
+            <div class="flex items-center">
+                <a class="flex w-36 xl:w-44" href="#">
+                    <svg width="100%" height="100%" viewBox="0 0 373 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <text x="121.733px" y="67.928px" style="font-family:'ZizouSlab-Black', 'Zizou Slab';font-weight:800;font-size:85.728px;">a<tspan x="165.283px 199.403px" y="67.928px 67.928px">te</tspan>li<tspan x="293.361px" y="67.928px">e</tspan>r</text>
+                        <path id="primary" d="M100.566,40.741l-20.014,-35.648c-1.833,-3.176 -5.245,-5.125 -8.912,-5.093l-41.351,-0c-3.667,-0.033 -7.079,1.917 -8.912,5.093l-20.014,35.648c-1.817,3.147 -1.817,7.038 0,10.185l20.014,35.648c1.833,3.176 5.245,5.125 8.912,5.093l41.351,0c3.667,0.033 7.079,-1.917 8.912,-5.093l20.014,-35.648c1.817,-3.147 1.817,-7.038 0,-10.185Zm-49.601,20.37c-8.381,0 -15.278,-6.897 -15.278,-15.278c0,-8.381 6.897,-15.278 15.278,-15.278c8.381,0 15.278,6.897 15.278,15.278c0,8.381 -6.897,15.278 -15.278,15.278Z" style="fill:#4071eb;fill-rule:nonzero;"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="hidden lg:flex">
+                <button class="group rounded-md text-center transition-all ease-in-out hover:-translate-y-0 min-w-[100px] px-8 py-4 bg-white border-1 border-[#0071eb] hover:bg-[#B3D4F8] dark:bg-green-secondary !min-w-0 px-7 mr-[8px]">
+                    <span class="whitespace-nowrap text-xl font-semibold text-[#0071eb] leading-[1.3] font-[Arimo]" data-i18n="nav.access">Acceder</span>
+                </button>
+                <button class="group rounded-md text-center transition-all ease-in-out hover:-translate-y-0 min-w-[100px] px-8 py-4 bg-[#0071eb] hover:bg-[#004FA6] !min-w-0 px-7">
+                    <span class="whitespace-nowrap text-xl font-semibold text-white leading-[1.3] font-[Arimo]" data-i18n="nav.start">Comience ahora</span>
+                </button>
+            </div>
+            
+            <button id="menu-toggle" class="relative h-6 w-6 lg:hidden flex items-center justify-center text-black" type="button">
+                <span id="icon-menu" class="absolute transition-all duration-300 transform rotate-0 opacity-100 scale-100">
+                    <Menu2 />
+                </span>
+                <span id="icon-x" class="absolute transition-all duration-300 transform -rotate-90 opacity-0 scale-0">
+                    <X />
+                </span>
+            </button>
+ 
+            <div id="mobile-menu" class="fixed left-0 right-0 z-[-1] w-full lg:hidden bg-[#fff] top-16 md:top-20 shadow-md transition-all duration-300 ease-in-out opacity-0 pointer-events-none -translate-y-4">
+                <nav class="container relative flex h-full flex-col justify-between divide-y divide-black divide-opacity-15">
+                    <div class="w-full px-5 pb-5 pt-4">
+                        <div class="flex w-full flex-col justify-between">
+                                    <a class="rounded-md text-white text-center transition-all ease-in-out hover:-translate-y-0 min-w-[250px] px-10 py-3 md:py-4 bg-[#0071eb] hover:bg-[#004FA6] mt-6 mb-4 font-[Arimo] font-black" href="#">
+                                        <span class="whitespace-nowrap text-xl font-semibold text-white leading-[1.3] font-[Arimo]" data-i18n="nav.startMobile">Comenzar</span>
+                                    </a>
+                                    <a class="rounded-md text-center transition-all ease-in-out hover:-translate-y-0 min-w-[250px] px-10 py-3 md:py-4 border-1 border-[#0071eb] bg-transparent hover:bg-[#B3D4F8] text-[#0071eb] mb-4 font-[Arimo] font-black" href="#">
+                                        <span class="whitespace-nowrap text-xl font-semibold text- leading-[1.3] font-[Arimo]" data-i18n="nav.access">Acceder</span>
+                                    </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<style>
+    button {
+        cursor: pointer;
+    }
+
+    .container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: 480px) {
+        .sm\:px-0 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    @media (min-width: 670px) {
+        .container {
+            max-width: 650px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 760px;
+        }
+    }
+
+
+    @media (min-width: 768px) {
+        .md\:h-20 {
+            height: 5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            max-width: 960px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+
+    @media (min-width: 1536px) {
+        .container {
+            max-width: 1456px;
+        }
+    }
+    @media (min-width: 1792px) {
+        .container {
+            max-width: 1700px;
+        }
+    }
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconX = document.getElementById('icon-x');
+
+        if (menuToggle && mobileMenu && iconMenu && iconX) {
+            menuToggle.addEventListener('click', () => {
+
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('pointer-events-none');
+                mobileMenu.classList.toggle('-translate-y-4');
+                
+                mobileMenu.classList.toggle('opacity-100');
+                mobileMenu.classList.toggle('pointer-events-auto');
+                mobileMenu.classList.toggle('translate-y-0');
+
+                iconMenu.classList.toggle('rotate-0');
+                iconMenu.classList.toggle('opacity-100');
+                iconMenu.classList.toggle('scale-100');
+                
+                iconMenu.classList.toggle('rotate-90');
+                iconMenu.classList.toggle('opacity-0');
+                iconMenu.classList.toggle('scale-0');
+                
+                iconX.classList.toggle('-rotate-90');
+                iconX.classList.toggle('opacity-0');
+                iconX.classList.toggle('scale-0');
+                
+                iconX.classList.toggle('rotate-0');
+                iconX.classList.toggle('opacity-100');
+                iconX.classList.toggle('scale-100');
+            });
+        }
+    });
+</script>
