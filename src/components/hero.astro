@@ -1,3 +1,6 @@
+---
+import { MacbookScroll } from './ui/macbook-scroll.tsx';
+---
 <section class="md:section relative">
     <div class="bg-[#B3D4F8] p-5 pt-10 md:p-10 lg:py-20 !pb-0 md:my-4 lg:m-10 flex items-center justify-center w-full md:rounded-[16px] md:border border-none">
         <div class="container relative">
@@ -14,8 +17,8 @@
                     <a class="link-underline-animated hover:text-[#0071eb]" href="#" data-i18n="hero.loginLink">Iniciar Sesion</a>
                 </span>
             </div>
-            <div class="h-[350px] md:h-[250px] lg:h-[320px] xl:h-[420px] 2xl:h-[480px] flex items-end" >
-                
+            <div class="flex items-center justify-center w-full overflow-hidden" >
+                <MacbookScroll client:load src="https://images8.alphacoders.com/136/thumb-1920-1363709.png" showGradient={false} title="" />
             </div>
         </div>
     </div>
