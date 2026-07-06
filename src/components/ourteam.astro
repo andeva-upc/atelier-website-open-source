@@ -92,7 +92,7 @@ import VideoCard from './react/VideoCard'
         <div class="reveal-left w-full">
             <VideoCard 
                 client:load 
-                youtubeUrl="https://www.youtube.com/embed/QGMqat4oA00?si=A2d-jfye9Rov0CmL" 
+                youtubeUrl="https://youtu.be/SzdJd2aiv1A" 
                 label="@Video-About-The-Team"
                 quoteBefore="«En Atelier, creemos que la tecnología no debería ser complicada. "
                 quoteHighlight="Nuestra misión es empoderar a los talleres mecánicos"
@@ -101,11 +101,20 @@ import VideoCard from './react/VideoCard'
         </div>
     
         <div class="reveal-right w-full">
-            <VideoCard 
-                client:load 
-                youtubeUrl="https://www.youtube.com/embed/QGMqat4oA00?si=A2d-jfye9Rov0CmL" 
-                label="@Video-About-The-Product"
-            />
+            <div class="border border-black bg-white flex flex-col p-6 md:p-8 rounded-none h-full justify-center">
+                <div class="w-full aspect-video border border-dashed border-zinc-300 bg-zinc-50 flex flex-col items-center justify-center text-zinc-400 p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2 opacity-60 text-[#0071eb]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                    <span class="font-['Arimo'] font-semibold text-zinc-600 text-sm md:text-base">Video del producto (Próximamente)</span>
+                    <span class="font-['Arimo'] text-zinc-400 text-xs mt-1 text-center">Un recorrido completo por las funcionalidades de Atelier</span>
+                </div>
+                <div class="w-full text-end mt-6">
+                    <span class="bg-[#B3D4F8] px-1 py-0.5 mx-0.5 font-semibold text-lg text-black">
+                        @Video-About-The-Product
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
