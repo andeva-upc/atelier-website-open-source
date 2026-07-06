@@ -166,7 +166,19 @@ export const Lid = ({
         <img
           src={src as string}
           alt="aceternity logo"
-          className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+          className="absolute top-0 left-0 rounded-lg object-contain bg-black"
+          style={{
+            width: "200%",
+            height: "200%",
+            maxWidth: "none",
+            transform: "scale(0.5) translate3d(0, 0, 0)",
+            transformOrigin: "top left",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            filter: "blur(0)",
+            WebkitFilter: "blur(0)",
+            imageRendering: "-webkit-optimize-contrast",
+          }}
         />
       </motion.div>
     </div>
