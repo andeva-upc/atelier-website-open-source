@@ -57,18 +57,6 @@ const memberQuotes: Record<string, { es: { before: string, highlight: string, af
             after: " and Back-End development."
         }
     },
-    Jennivz: {
-        es: {
-            before: "Estudiante de la Universidad Peruana de Ciencias Aplicadas de la carrera de Ingeniería de Software. ",
-            highlight: "Especializada en datos",
-            after: "."
-        },
-        en: {
-            before: "Student of Software Engineering at Universidad Peruana de Ciencias Aplicadas. ",
-            highlight: "Specialized in data engineering",
-            after: "."
-        }
-    },
     danieltyuyu: {
         es: {
             before: "Estudiante de la Universidad Peruana de Ciencias Aplicadas cursando la carrera de Ingeniería de Software. ",
