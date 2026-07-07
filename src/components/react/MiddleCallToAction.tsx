@@ -295,7 +295,7 @@ export default function MiddleCallToAction({
         )}
 
         {/* Custom Lime/Evernote green CTA button */}
-        <a href="https://atelier-webapp-11848.vercel.app/sign-in" className="w-full md:w-auto mt-4 px-16 py-4 bg-[#0071eb] hover:bg-[#004FA6] text-white font-semibold text-lg rounded-md transition-all hover:scale-[1.02] active:scale-[0.98] duration-200 cursor-pointer font-['Arimo'] text-xl lg:text-2xl inline-flex items-center justify-center" style={{ textDecoration: 'none' }}>
+        <a href="https://atelier-webapp-11848.vercel.app/sign-up" className="w-full md:w-auto mt-4 px-16 py-4 bg-[#0071eb] hover:bg-[#004FA6] text-white font-semibold text-lg rounded-md transition-all hover:scale-[1.02] active:scale-[0.98] duration-200 cursor-pointer font-['Arimo'] text-xl lg:text-2xl inline-flex items-center justify-center" style={{ textDecoration: 'none' }}>
           {activeText.buttonText}
         </a>
       </div>
