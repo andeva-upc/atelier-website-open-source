@@ -270,7 +270,7 @@ export default function EndCallToAction({
                     </p>
 
                     {/* Button CTA: Matte black premium pill-button */}
-                    <button className="group rounded-md px-10 py-4 bg-[#212121] hover:bg-[#0071eb] text-white font-semibold text-lg transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex items-center gap-2">
+                    <a href="https://atelier-webapp-11848.vercel.app/sign-in" className="group rounded-md px-10 py-4 bg-[#212121] hover:bg-[#0071eb] text-white font-semibold text-lg transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex items-center gap-2" style={{ textDecoration: 'none' }}>
                         <span className="font-['Arimo'] leading-none">
                             {activeText.buttonText}
                         </span>
@@ -284,7 +284,7 @@ export default function EndCallToAction({
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                    </button>
+                    </a>
                 </div>
 
                 {/* ================= RIGHT ISOMETRIC TOWER PANEL ================= */}
